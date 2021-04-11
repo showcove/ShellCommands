@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ $# -ne 1 ]] || [[ $1 != "true" && $1 != "false" ]]; then
+  echo "hideDesktop true 혹은 hideDesktop false 를 입력해주세요"
+else
+  defaults write com.apple.finder CreateDesktop $1
+  killall Finder
+fi
